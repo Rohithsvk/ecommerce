@@ -60,7 +60,7 @@
  			<td><%=rs.getString(4)%></td>
  			<td><%=rs.getString(5)%></td>
  			<td>
-			<a href="cartadditem?product_id=<%=rs.getInt(1)%>">Add To Cart</a>
+			<a href="addToCartAction.jsp?product_id=<%=rs.getInt(1)%>">Add To Cart</a>
 			</td>
 			</tr>
 		<%}

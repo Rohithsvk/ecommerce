@@ -18,8 +18,6 @@
   Welcome ${email}
   <hr>
   
-  
-  
   <h3> Items available in our Store</h3> 
    <form action="searchHome.jsp">
 <input type="search" name="search" placeHolder="search Items" >

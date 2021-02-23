@@ -33,7 +33,7 @@ if("wrong".equals(msg))
  	<tr>
  		<td colspan=2>
  			<button>Login</button><br>
- 			<a href="signup">Not a member? Signup</a>
+ 			<a href="signUp.jsp">Not a member? Signup</a>
  		</td>
  	</tr>
  </table>
