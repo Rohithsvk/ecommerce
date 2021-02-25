@@ -81,7 +81,7 @@ try{
 	         <h3 style="text-align:center;"> Add the details of Shipment</h3>
 	        <tr>
  				<td width=50%>Mobile No.*</td>
- 				<td><input name= mobile maxlength=10 type="number"size="47" required ></td>
+ 				<td><input name= mobile maxlength="10" type="number"size="47" required ></td>
  			</tr>
  			<tr>
  				<td width=50%>Address for Shipment*</td>
@@ -95,10 +95,22 @@ try{
  				<td width=50%>State*</td>
  				<td><input name="state" maxlength=100  type="text" size="47" required></td>
  			</tr>
+ 		
+ 			<tr>
+ 				<td width=50%> Card Number*</td>
+ 				<td><input name="CN" maxlength=100  type="text" size="47" required></td>
+ 			</tr>
+ 			<tr>
+ 				<td width=50%> CVV</td>
+ 				<td><input name="CVV" maxlength=3  type="text" size="47" required></td>
+ 			</tr>
+ 			
+ 			
+ 			
+ 			
 	         <tr>
 	        <th scope="col" style="background-color: yellow;">Total: <i class="fa fa-inr"> <%out.println(total); %></i> </th>
 	       <%if (total>0) {%>
-	       <!-- <th scope="col"><a href="paymentAction.jsp">Proceed to Pay</a></th> --> 
 	       <th> <input type="submit" style="width: 250px; height: 50px; background-color:#3CB371;"  value="Check Out" > </th>
 	        <%} %>
 	      </tr>

@@ -22,6 +22,7 @@ try{
 	ps.setString(6,email);
 	ps.setString(7,pwd);
 	ps.executeUpdate();
+	session.setAttribute("email",email);
 	response.sendRedirect("signUpConfirmation.jsp?msg=done");
 	
 }

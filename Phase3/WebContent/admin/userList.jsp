@@ -7,6 +7,8 @@
 <title>UserList</title>
 </head>
 <body>
+<jsp:include page="adminHeader.jsp" ></jsp:include>
+<jsp:include page="AdminTopBar.jsp" ></jsp:include>
 <h2> List of users Who are registered with Sporty Shoes </h2> 
  <h3 >
  <form action="searchUserList.jsp" method="post">
@@ -65,6 +67,6 @@
 
 
 
-
+ <jsp:include page="../footer.jsp" ></jsp:include>
 </body>
 </html>

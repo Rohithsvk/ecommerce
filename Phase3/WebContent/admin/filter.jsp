@@ -1,8 +1,7 @@
 <%@ page import="project.ConnectionProvider" %>
  <%@ page import="java.sql.*"%>
- 
 <jsp:include page="adminHeader.jsp" ></jsp:include>
-<jsp:include page="AdminTopBar.jsp" ></jsp:include>
+<jsp:include page="AdminTopBar.jsp" ></jsp:include> 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -28,9 +27,17 @@ tr:nth-child(even) {background-color: #f2f333;}
 </style>
 </head>
 <body>
-<div style="color: Black; text-align: center; font-size: 30px;"> Cancelled Orders <i class="fas fa-archive"></i></div> <br>
-<% 
+<div style="color: white; text-align: center; font-size: 30px;">Orders Received <i class="fas fa-archive"></i></div>
 
+
+
+  <h1>
+<form action="filter.jsp">  Enter delivery Date: <input type="text" name="dd" placeholder="yyyy-mm-dd"> 
+<input type="submit" value="search"> </form>
+</h1>
+
+<% 
+String dd= request.getParameter("dd");
 String msg= request.getParameter("msg");
 if("cancel".equals(msg))
 {
@@ -53,7 +60,7 @@ if("invalid".equals(msg))
 %>
 
 <table  cellpadding="15" cellspacing="5" border="5" id="customers">
-          <thead>
+         <thead>
           <tr>
           <th>Mobile Number</th>
           	<th> product ID </th>
@@ -67,7 +74,8 @@ if("invalid".equals(msg))
              <th scope="col">Expected Delivery Date</th>
              <th scope="col">Payment Method</th>
               <th scope="col">Status</th>
-             
+              <th scope="col">Cancel order <i class='fas fa-window-close'></i></th>
+              <th scope="col">Order Delivered <i class='fas fa-dolly'></i></i></th>
           </tr>
           </thead>
         <%
@@ -75,7 +83,7 @@ if("invalid".equals(msg))
         try{
         	Connection con=ConnectionProvider.getCon();
         	Statement st =con.createStatement();
-        	ResultSet rs= st.executeQuery(" select * from cart inner join eproduct where cart.product_id=eproduct.product_id and cart.orderDate is not null and cart.status='cancel'");
+        	ResultSet rs= st.executeQuery(" select * from cart inner join eproduct where cart.deliveryDate like '"+dd+"%' and cart.orderDate is not null and cart.status='processing'");
         	while(rs.next())
         	{
         		sno=sno+1;
@@ -95,7 +103,8 @@ if("invalid".equals(msg))
               <td> ONLINE</td>
                
                <td><%=rs.getString(15) %></td>
-              
+               <td><a href="cancelOrderAction.jsp?product_id=<%=rs.getString(2)%>&email=<%=rs.getString(1) %>">Cancel <i class='fas fa-window-close'></i></a> </td>
+                <td><a href="deliveryOrderAction.jsp?product_id=<%=rs.getString(2)%>&email=<%=rs.getString(1) %>">Delivered <i class='fas fa-dolly'></i></a></td>
             </tr>
              		<%
         	 }

@@ -50,7 +50,6 @@ catch(Exception e)
 
 %>
 
-<h1> Confirm ur detials for payment</h1>
 
 </body>
 </html>

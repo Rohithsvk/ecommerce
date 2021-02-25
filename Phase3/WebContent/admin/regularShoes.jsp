@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title> All Products List</title>
+<title> Regular Shoes</title>
 <style>
 table {
  
@@ -23,27 +23,16 @@ th, td {
 
 tr:nth-child(even) {background-color: #f2f333;}
 </style>
-</head>
 
+</head>
 <body>
 <jsp:include page="adminHeader.jsp" ></jsp:include>
 <jsp:include page="AdminTopBar.jsp" ></jsp:include>
-
-<h3> List of All products in the Store</h3>
-<% 
-String msg= request.getParameter("msg");
-if("done".equals(msg))
-{
-%>
-<h2> Action performed Sucessfully  </h2>
-<%}
-if("wrong".equals(msg))
-{
-%>
-<h2> Something went wrong</h2>
-<%} %> 
-
-<table cellpadding="15" cellspacing="5" border="5">
+<%@ page import="project.ConnectionProvider" %>
+ <%@ page import="java.sql.*"%>
+ 
+ <% String category= request.getParameter("Category").toString(); %>
+ <table cellpadding="15" cellspacing="5" border="5">
  <thead>
  <tr>
  <th> Product ID</th>
@@ -57,13 +46,10 @@ if("wrong".equals(msg))
  </thead>
  
  <tbody>
- 
- <%@ page import="project.ConnectionProvider" %>
- <%@ page import="java.sql.*"%>
  <% try {
  Connection con = ConnectionProvider.getCon();
  Statement st = con.createStatement();
- ResultSet rs = st.executeQuery("select * from eproduct");
+ ResultSet rs = st.executeQuery("select * from eproduct where Category='"+category+"'");
  while(rs.next())
  {
  %>
@@ -93,10 +79,7 @@ if("wrong".equals(msg))
  
  </tbody>
  </table>
+ <jsp:include page="/footer.jsp" ></jsp:include>
 
-
-
-
- <jsp:include page="../footer.jsp" ></jsp:include>
 </body>
 </html>

@@ -33,17 +33,12 @@ try{
 	 while(rs2.next())
 	 {
 %>
-<h3> Sporty Shoes InVoice</h3>
+<h3 style="color:green"> Confirm Booking</h3>
 <hr>
-<div class="left-div"><h3>Name: <%=rs2.getString(1) %>  </h3></div>
-<div class="right-div-right"><h3>Email: <%=rs2.getString(6) %>  </h3></div>
+<div class="right-div-right"><h3>Email: <%=rs2.getString(8) %>  </h3></div>
 <div class="right-div"><h3>Mobile Number: <%=rs2.getString(17) %>  </h3></div>  
-
 <div class="left-div"><h3>Order Date: <%=rs2.getString(18) %>  </h3></div>
-
 <div class="right-div"><h3>Expected Delivery: <%=rs2.getString(19) %>  </h3></div> 
-
-<div class="left-div"><h3>Transaction Id:  </h3></div>
 <div class="right-div-right"><h3>City: <%=rs2.getString(14) %>  </h3></div> 
 <div class="right-div"><h3>Address: <%=rs2.getString(13) %>  </h3></div> 
 <div class="left-div"><h3>State: <%=rs2.getString(15) %>  </h3></div>
@@ -89,8 +84,7 @@ try{
   
 </table>
 <h3>Total:<%out.println(total); %> </h3>
-<a href="confirm.jsp"><button class="button left-button">Continue Shopping</button></a>
-<a onclick="window.print();"><button class="button right-button">Print</button></a>
+<a href="confirm.jsp"><button class="button left-button">Confirm Booking</button></a>
 <br><br><br><br>
 <% 
 	 }

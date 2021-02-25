@@ -1,17 +1,38 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+       <%@ include file="header.jsp" %>    
+  <%@ include file="topbar.jsp" %> 
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="ISO-8859-1">
 <title>Sporty Shoes Home Page</title>
+<style type="text/css">
+.search-container {
+  float: right;
+}
+table {
+ 
+  width: 100%;
+}
+h3{
+text-align:center;
+}
+thead{
+background-color: red;
+}
+th, td {
+  text-align: left;
+  padding: 15px;
+}
+
+tr:nth-child(even) {background-color: #f2f333;}
+</style>
+
+
+
 </head>
 <body>
-<center>
- <h3> Welcome to the brand new Online E Store </h3>
- <h1> Sporty Shoes</h1>
-  </center>
-  
   <hr>
   <hr>
   

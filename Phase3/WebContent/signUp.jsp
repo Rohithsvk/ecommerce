@@ -1,13 +1,55 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+       <%@ include file="header.jsp" %>    
+  <%@ include file="topbar.jsp" %> 
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="ISO-8859-1">
 <title>Registration</title>
+
+<style>
+body {
+  font-family: Arial;
+}
+
+input[type=text], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type=submit] {
+  width: 100%;
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+div.container {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+</style>
+
 </head>
 <body>
 
+<div class="container">
+<h3> Sign up Form</h3>
 <form action="signUpAction.jsp" method="post">
  <table border=1 cellspacing=2 cellpadding=4>
  	
@@ -43,10 +85,11 @@
  	
  		<td colspan=2>
  			<button>Signup</button><br>
- 			<a href="login">Already a member? Login</a>
+ 			<a href="userLogin.jsp">Already a member? Login</a>
  		</td>
  	</tr>
  </table>
 </form>
+</div>
 </body>
 </html>

@@ -1,29 +1,55 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-    
+      <%@ include file="header.jsp" %>    
+  <%@ include file="topbar.jsp" %>    
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="ISO-8859-1">
+ <link rel="stylesheet" href="/css/styles.css">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 <title>Sporty Shoes Home Page</title>
+<style type="text/css">
+.search-container {
+  float: right;
+}
+table {
+ 
+  width: 100%;
+}
+h2{
+color:green;
+text-align:center;
+}
+h3{
+text-align:center;
+}
+thead{
+background-color: red;
+}
+th, td {
+  text-align: left;
+  padding: 15px;
+}
+
+tr:nth-child(even) {background-color: #f2f333;}
+
+
+</style>
 </head>
 <body>
-<center>
- <h3> Welcome to the brand new Online E Store </h3>
- <h1> Sporty Shoes</h1>
-  </center>
- <%@ include file="topbar.jsp" %> 
-  <hr>
-  Welcome ${email}
-  <hr>
+<br>
+<div class="search-container">
+    <form action="searchHome.jsp">
+      <input type="text" placeholder="Search.." name="search">
+      <button type="submit"><i class="fa fa-search"></i></button>
+    </form>
+  </div>
+  <h3 style="text-align:center"> Items available in our Store</h3> 
   
-  <h3> Items available in our Store</h3> 
-   <form action="searchHome.jsp">
-<input type="search" name="search" placeHolder="search Items" >
-<input type="submit" value="search">
-</form>
+
 <hr>
+
 <% String msg= request.getParameter("msg");
 if ("added".equals(msg))
 {
@@ -45,6 +71,16 @@ if ("added".equals(msg))
 	<% 
 	}
 	%>
+	
+	<%
+	if ("sucess".equals(msg))
+	{
+	%>
+		<h2> your Transcation is SucessFull.. You can check in My Order</h2>
+	<% 
+	}
+	%>
+  
   
 <table cellpadding="15" cellspacing="5" border="5">
  <thead>
@@ -94,6 +130,6 @@ catch(Exception e)
  </tbody>
  </table>
 
-  
+  <jsp:include page="footer.jsp" ></jsp:include>
 </body>
 </html>

@@ -10,8 +10,34 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>My Orders</title>
+<style type="text/css">
+.search-container {
+  float: right;
+}
+table {
+ 
+  width: 100%;
+}
+h3{
+color:Black;
+text-align:center;
+}
+thead{
+background-color: red;
+}
+th, td {
+  text-align: left;
+  padding: 15px;
+}
+
+tr:nth-child(even) {background-color: #f2f333;}
+</style>
+
+
+
 </head>
 <body>
+<h3> My Orders</h3>
 <div style="color: white; text-align: center; font-size: 30px;">My Orders <i class='fab fa-elementor'></i></div> 
 
 <table cellpadding="15" cellspacing="5" border="5">

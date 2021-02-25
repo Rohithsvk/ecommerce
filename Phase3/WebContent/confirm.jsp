@@ -20,7 +20,7 @@ try
 	ps1.setString(1,status);
 	 ps1.setString(2, email);
 	 ps1.executeUpdate();
-	 response.sendRedirect("Home.jsp");
+	 response.sendRedirect("Home.jsp?msg=sucess");
 	 
 	 
 }

@@ -1,19 +1,15 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
-       <%@ include file="header.jsp" %>    
-  <%@ include file="topbar.jsp" %> 
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>     
+<%@ page isELIgnored="false" %>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="ISO-8859-1">
-<title>User Login</title>
-<style type="text/css">
-
-h3{
+<meta charset="UTF-8">
+<title> Admin Login</title>
+<style>
+h2{
 text-align:center;
-color:red;
 }
-
 form {
   border: 3px solid #f1f1f1;
 
@@ -46,15 +42,16 @@ button:hover {
   margin-left: auto;
   margin-right: auto;
 }
-
-
 </style>
-
 </head>
 <body>
-<h2 style="text-align:center"> User Login</h2>
+<jsp:include page="adminHeader.jsp" ></jsp:include>
 
-<%
+
+<h2 style="text-align:center">
+ Admin Login</h2>
+ 
+ <%
 String msg= request.getParameter("msg");
 if("notexist".equals(msg))
 {
@@ -66,24 +63,23 @@ if("invalid".equals(msg))
 %>
 <h3> password or Email is wrong </h3>
 <%} %>
-
-<form action="userLoginAction.jsp" method="post">
-<table border=1 cellspacing=2 cellpadding=4 class="center">
+<form name=frmLogin action="adminLoginAction.jsp" method="post">
+ <table border=1 cellspacing=2 cellpadding=5 class="center">
  	<tr>
- 		<td width=25%>Email id*</td>
- 		<td><input type="text" name=email maxlength=50 required></td>
+ 		<td width=25%>Admin id*</td>
+ 		<td><input name=admin maxlength=20 type="text"></td>
  	</tr>
  	<tr>
- 		<td width=25%>Password*</td>
- 		<td><input type="password" name=pwd  maxlength=10 required></td>
+ 		<td width=25%>Admin Password*</td>
+ 		<td><input name="password" maxlength=10 type="password"></td>
  	</tr>
  	<tr>
  		<td colspan=2>
- 			<button>Login</button><br>
- 			<a href="signUp.jsp">Not a member? Signup</a>
+ 			<button>Login</button>
  		</td>
  	</tr>
  </table>
 </form>
+ <jsp:include page="../footer.jsp" ></jsp:include>
 </body>
 </html>

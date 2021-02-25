@@ -1,10 +1,7 @@
+ <%@ page import="project.ConnectionProvider" %>
+ <%@ page import="java.sql.*"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-
-<%@ page isELIgnored="false" %>
-
-
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -18,6 +15,7 @@ ul {
 }
 
 li {
+
   float: right;
 }
 
@@ -30,7 +28,7 @@ li a, .dropbtn {
 }
 
 li a:hover, .dropdown:hover .dropbtn {
-  background-color: red;
+  background-color: green;
 }
 
 li.dropdown {
@@ -59,24 +57,44 @@ li.dropdown {
 .dropdown:hover .dropdown-content {
   display: block;
 }
+.user{
+float:left
+color:red;
+}
 </style>
 </head>
 <body>
+<ul>
 
 
-<a href="Home.jsp">Home</a> | 
 <% if (session.getAttribute("email") == null ) { %>
-	<a href="userLogin.jsp">Login/Signup</a> | |  
-<% }  else { %>
-	
-	<a href="myCart.jsp">Cart</a> | |  
-	
-	<a href="editprofile.jsp">Edit Profile</a> |  | 
-	<a href="myOrders.jsp">Your Orders</a>  |  | 
-	<a href="logout.jsp">Logout</a>
+	  
+ <li> <a href="Home.jsp"> Home</a>
+<li>	<a href="userLogin.jsp">Login/Signup</a> </li>
+<li style="float:left"> <a> Welcome Guest </a> </li>
 
-<% }  %>
+<% }  else { %>
+
+ 	<li class="dropdown">
+    <a href="javascript:void(0)" class="dropbtn"> My Account</a>
+    <div class="dropdown-content">
+    	<a href="myOrders.jsp"> My Orders</a>
+      <a href="editProfile.jsp"> Edit Profile</a>
+      <a href="changePassword.jsp"> Change Password</a>
+      <a href="logout.jsp"> Logout</a>
+    </div>
+  </li>
+ 
+  	<li><a href="myCart.jsp"> My Cart</a></li>
+  	<li><a href="Home.jsp">Home</a></li>
+  	<li style="float:left"> <a> welcome ${email}  </a>  </li>
+  	
+  	
+  	
+  	<% }  %>
+</ul>
+ 
 
 </body>
 </html>
-
+    

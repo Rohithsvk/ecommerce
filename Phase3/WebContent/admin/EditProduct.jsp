@@ -1,7 +1,8 @@
 <%@ page import="project.ConnectionProvider" %>
  <%@ page import="java.sql.*"%>
  
- 
+ <jsp:include page="adminHeader.jsp" ></jsp:include>
+<jsp:include page="AdminTopBar.jsp" ></jsp:include>
  <center>  <h1>  Edit the product </h1> </center>
 
  
@@ -61,4 +62,4 @@ Status:<select
 	 System.out.println(e);
  }
  %>
- 
+  <jsp:include page="../footer.jsp" ></jsp:include>

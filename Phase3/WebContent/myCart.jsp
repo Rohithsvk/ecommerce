@@ -11,16 +11,43 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <title>My Cart</title>
 <style>
+h1{
+text-align:center;
+}
 h3
 {
-	color: yellow;
+	color: blue;
 	text-align: center;
 }
+
+table {
+ 
+  width: 100%;
+}
+h2{
+color:green;
+text-align:center;
+}
+h3{
+text-align:center;
+}
+thead{
+background-color: red;
+}
+th, td {
+  text-align: left;
+  padding: 15px;
+}
+
+tr:nth-child(even) {background-color:#86b300;}
+
+
 </style>
 </head>
 <body>
-<div style="color: white; text-align: center; font-size: 30px;">My Cart <i class='fas fa-cart-arrow-down'></i></div>
-
+<br>
+<div style="color:Blue; text-align: center; font-size: 30px; font-weight: Bold"> My Cart </div>
+<br>
 <%String msg= request.getParameter("msg");
 if ("notPossible".equals(msg))
 {

@@ -7,7 +7,8 @@
 <title>Insert title here</title>
 </head>
 <body>
-
+<jsp:include page="adminHeader.jsp" ></jsp:include>
+<jsp:include page="AdminTopBar.jsp" ></jsp:include>
 <table cellpadding="15" cellspacing="5" border="5">
  <thead>
  <tr>
@@ -67,6 +68,6 @@
  
  </tbody>
  </table>
-
+ <jsp:include page="../footer.jsp" ></jsp:include>
 </body>
 </html>
